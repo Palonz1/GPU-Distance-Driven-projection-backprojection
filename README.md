@@ -13,6 +13,7 @@ The interface of projection and backprojection
 [out, cfg] = dd3(flag_fw, cfg, in, view_ind, mask, bp_type);
 
 flag_fw: Indicate which mode you want to use. The data type is a string. You can have the following options:
+
         1. 'fp'                         multi-CPUs based distance-driven forward projection (try to use all of your cores)
         2. 'fp1'                        one core CPU based DD forward projection
         3. 'fp8'                        8 core CPU based dd forward projection
@@ -54,14 +55,18 @@ cfg: The geometry configuration, you have to fill in the following fields manual
         cfg.recon.recon_center_z = 0;                                       %    center Z position of the image volume in the world coordinate.
 
 in:  input data
+
        if forward projection, it is the image volume stored in [Z, X, Y] order.
        if backprojection, it is the projection data stored in [ZN, DN, PN] order : ZN is the number of detector cell along bench moving direction, DN is the number of detector cell along transverse plane and PN is the number of views.
 
 view_ind (optional):
+
        The indices of the views that will be used for projection/backprojection. It will be helpful in OS technique. If not provided, all views will be applied.
 
 mask (optional):
+
        The mask used along transverse plane to indicate the ROI. If not provided, the ones(X,Y) mask will be used.
 
 bp_type (optional):
+
         It can be used for PCG algorithm. However, DO NOT USE IT!!
