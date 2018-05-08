@@ -3,31 +3,26 @@
 If you are using this library, please cite
 "GPU-based Branchless Distance-Driven Projection and Backprojection", IEEE Transactions on Computational Imaging. DOI: 10.1109/TCI.2017.2675705
 Author : Rui Liu, Lin Fu, Bruno De Man, Hengyong Yu
+and 
+“GPU-Based Acceleration for Interior Tomography”, IEEE Access, DOI: 10.1109/ACCESS.2014.2340372
+Author : Rui Liu, Yan Luo, Hengyong Yu
 
 Email: ctlab.ruiliu@gmail.com
 
-NOTE: currently, we only support linux platform. If you want to use it in Windows, please contact ctlab.ruiliu@gmail.com or liurui1217@gmail.com.
+NOTE: currently, we support linux/windows platform. If you want to use it in Mac, please contact ctlab.ruiliu@gmail.com or liurui1217@gmail.com.
 Thanks.
 
 The interface of projection and backprojection
 [out, cfg] = dd3(flag_fw, cfg, in, view_ind, mask, bp_type);
 
 flag_fw: Indicate which mode you want to use. The data type is a string. You can have the following options:
-
-        1. 'fp'                         multi-CPUs based distance-driven forward projection (try to use all of your cores)
-        2. 'fp1'                        one core CPU based DD forward projection
-        3. 'fp8'                        8 core CPU based dd forward projection
-        4. 'bp'                         multi-CPUs based distance-driven backprojection (try to use all of your cores)
-        5. 'bp1'                        one core CPU based DD backprojection
-        6. 'bp8'                        8 core CPU based DD backprojection
-        7. 'fp_gpu_branchless'          GPU based branchless DD projection 
-        8. 'fp_gpu_pseudo_dd'           GPU based pseudo DD projection
-        9. 'fp_gpu_soft_interp'         GPU based software-interpolation based DD projection 
-        10.'fp_gpu_branches'            GPU based Distance Driven projection
-        11.'bp_gpu_branchless'          GPU based branchless DD backprojection
-        12.'bp_gpu_pseudo_dd'           GPU based pseudo DD backprojection.
-        13.'bp_gpu_soft_interp'         GPU baesd software-interpolation based DD backprojection
-        14.'bp_gpu_zline'               GPU based z-line DD backprojection
+        1. 'fp_gpu_branchless'          GPU based branchless DD projection 
+        2. 'fp_gpu_pseudo_dd'           GPU based pseudo DD projection
+        3. 'fp_gpu_soft_interp'         GPU based software-interpolation based DD projection 
+        4. 'fp_gpu_branches'            GPU based Distance Driven projection
+        5. 'bp_gpu_branchless'          GPU based branchless DD backprojection
+        6. 'bp_gpu_pseudo_dd'           GPU based pseudo DD backprojection.
+        7. 'bp_gpu_soft_interp'         GPU baesd software-interpolation based DD backprojection
 
 cfg: The geometry configuration, you have to fill in the following fields manually:
 
