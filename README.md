@@ -16,6 +16,7 @@ The interface of projection and backprojection
 [out, cfg] = dd3(flag_fw, cfg, in, view_ind, mask, bp_type);
 
 flag_fw: Indicate which mode you want to use. The data type is a string. You can have the following options:
+
         1. 'fp_gpu_branchless'          GPU based branchless DD projection 
         2. 'fp_gpu_pseudo_dd'           GPU based pseudo DD projection
         3. 'fp_gpu_soft_interp'         GPU based software-interpolation based DD projection 
