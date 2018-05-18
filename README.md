@@ -66,3 +66,6 @@ mask (optional):
 bp_type (optional):
 
         It can be used for PCG algorithm. However, DO NOT USE IT!!
+        
+        
+NOTE: You may found the error if the projection/backprojection scalar is big. You may have the error "Unexpected device launch failure". It may not because of the device memory limitation, but because that you did not set the "WDDM TDR Delay" correctly. Please open the nsight monitor with adminstractor access and set "WDDM TDR enabled" to false or WDDM TDR Delay with a large enough time period.
